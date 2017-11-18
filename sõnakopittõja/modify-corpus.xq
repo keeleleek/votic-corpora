@@ -58,18 +58,30 @@ for $text-with-tš in db:open('sonakopittoja')//(text()|@*)[matches(.,"tš","i")
 
 
 
-(: Lemmatize negation tokens :) (:
+(: Lemmatize negation tokens :) 
 for $neg in db:open('sonakopittoja')//w[
               matches(., "^(" || string-join(
                 ("en","ed","eb","emme","eväd","ette"), "|") || ")$")
             ]
-  return
-    insert node attribute {"lemma"} {"neg"} into $neg
-:)
+  return (
+    insert node attribute {"pos"} {"V"} into $neg,
+    insert node attribute {"lemma"} {"eb"} into $neg,
+    insert node attribute {"analysis"} {
+      switch ($neg/text())
+      case ("en") return "Pers Prs Ind Sg1 Neg"
+      case ("ed") return "Pers Prs Ind Sg2 Neg"
+      case ("eb") return "Pers Prs Ind Sg3 Neg"
+      case ("emme") return "Pers Prs Ind Pl1 Neg"
+      case ("ette") return "Pers Prs Ind Pl2 Neg"
+      case ("eväd") return "Pers Prs Ind Pl3 Neg"
+      default return ()
+    } into $neg
+  )
 
 
 
-(: Lemmatize õlla tokens :) 
+
+(: Lemmatize õlla tokens :) (:
 for $õlla in db:open('sonakopittoja')//w[
               matches(., "^(" || string-join(
                 ("õõn","õõt","on","õõmmõ","õõttõ","õlla"), "|") || ")$")
@@ -85,9 +97,10 @@ for $õlla in db:open('sonakopittoja')//w[
       case ("õõmmõ") return "Pers Prs Ind Pl1 Aff"
       case ("õõttõ") return "Pers Prs Ind Pl2 Aff"
       case ("õlla") return "Pers Prs Ind Pl3 Aff"
-      default return () (: @todo: throw exception :)
+      default return ()
     } into $õlla
   )
+:)
 
 
 
