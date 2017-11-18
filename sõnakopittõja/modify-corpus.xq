@@ -118,7 +118,7 @@ declare function local:export-to-giellatekno-vrt($nodes as node()*)
         (: 2) lemma+morphemes :)
         if (exists($node/@lemma)) then (out:tab() || $node/@lemma) else (),
         if (exists($node/@pos)) then (" //_" || $node/@pos || "_ ") else (),
-        if (exists($node/@analysis)) then ($node/@analysis || ",") else (),
+        if (exists($node/@analysis)) then ($node/@analysis || ", //") else (),
         out:nl()
       )
       
