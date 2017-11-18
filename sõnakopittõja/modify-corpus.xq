@@ -29,6 +29,17 @@ for $text in db:open("sonakopittoja")//text()
 
 
 
+(: Insert date information :)
+for $text in db:open('sonakopittoja')//text
+  return (
+    insert node attribute {"datefrom"} {"20150101"} into $text,
+    insert node attribute {"dateto"} {"20151231"} into $text,
+    insert node attribute {"timefrom"} {"000000"} into $text,
+    insert node attribute {"timeto"} {"235959"} into $text
+  )
+
+
+
 (: Tokenize sentence elements (e.g populate <s> with <w>) :) (:
 for $s in db:open('sonakopittoja')//*[exists(./text())]
   return
@@ -104,7 +115,7 @@ for $õlla in db:open('sonakopittoja')//w[
 
 
 
-(: Export to Korp with Giellatekno tags :) 
+(: Export to Korp with Giellatekno tags :) (:
 declare function local:export-to-giellatekno-vrt($nodes as node()*)
 {
   for $node in $nodes
@@ -142,3 +153,4 @@ declare option output:method "xml";
 declare option output:indent "no";
 declare option output:omit-xml-declaration "yes";
 local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus) 
+:)
