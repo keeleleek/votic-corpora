@@ -58,7 +58,7 @@ for $text-with-tš in db:open('sonakopittoja')//(text()|@*)[matches(.,"tš","i")
 
 
 
-(: Lemmatize negation tokens :) 
+(: Lemmatize negation tokens :) (:
 for $neg in db:open('sonakopittoja')//w[
               matches(., "^(" || string-join(
                 ("en","ed","eb","emme","eväd","ette"), "|") || ")$")
@@ -77,7 +77,7 @@ for $neg in db:open('sonakopittoja')//w[
       default return ()
     } into $neg
   )
-
+:)
 
 
 
@@ -104,7 +104,7 @@ for $õlla in db:open('sonakopittoja')//w[
 
 
 
-(: Export to Korp with Giellatekno tags :) (:
+(: Export to Korp with Giellatekno tags :) 
 declare function local:export-to-giellatekno-vrt($nodes as node()*)
 {
   for $node in $nodes
@@ -117,6 +117,8 @@ declare function local:export-to-giellatekno-vrt($nodes as node()*)
         $node/text(),
         (: 2) lemma+morphemes :)
         if (exists($node/@lemma)) then (out:tab() || $node/@lemma) else (),
+        if (exists($node/@pos)) then (" //_" || $node/@pos || "_ ") else (),
+        if (exists($node/@analysis)) then ($node/@analysis || ",") else (),
         out:nl()
       )
       
@@ -134,9 +136,9 @@ declare function local:export-to-giellatekno-vrt($nodes as node()*)
     default return
       ()
 };
-:)
-(:
+
+
 declare option output:method "xml";
 declare option output:indent "no";
 declare option output:omit-xml-declaration "yes";
-local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus) :)
+local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus) 
