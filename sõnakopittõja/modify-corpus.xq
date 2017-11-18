@@ -78,3 +78,41 @@ for $õlla in db:open('sonakopittoja')//w[
   return
     insert node attribute {"lemma"} {"õlla"} into $õlla
 :)
+
+
+
+(: Export to Korp with Giellatekno tags :)
+declare function local:export-to-giellatekno-vrt($nodes as node()*)
+{
+  for $node in $nodes
+  return
+    typeswitch ($node)
+    
+    case (element(w)) return
+      concat(
+        (: 1) token :)
+        $node/text(),
+        (: 2) lemma+morphemes :)
+        if (exists($node/@lemma)) then (out:tab() || $node/@lemma) else (),
+        out:nl()
+      )
+      
+    case (element(*)) return
+      (
+        element {name($node)} {(
+          $node/@*, (: pass through all attributes :)
+          out:nl(), (: add a newline :)
+          for $child in $node/node()
+            return local:export-to-giellatekno-vrt($child)
+        )},
+      out:nl()
+    )
+    
+    default return
+      ()
+};
+
+declare option output:method "xml";
+declare option output:indent "no";
+declare option output:omit-xml-declaration "yes";
+local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus)
