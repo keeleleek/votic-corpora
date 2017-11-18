@@ -69,19 +69,29 @@ for $neg in db:open('sonakopittoja')//w[
 
 
 
-(: Lemmatize õlla tokens :) (:
+(: Lemmatize õlla tokens :) 
 for $õlla in db:open('sonakopittoja')//w[
               matches(., "^(" || string-join(
-                ("õõn","õõt","on","õõmmõ","õõttõ","õlla",
-                 "õlko","õõtko"), "|") || ")$")
+                ("õõn","õõt","on","õõmmõ","õõttõ","õlla"), "|") || ")$")
             ]
-  return
-    insert node attribute {"lemma"} {"õlla"} into $õlla
-:)
+  return (
+    insert node attribute {"pos"} {"V"} into $õlla,
+    insert node attribute {"lemma"} {"õlla"} into $õlla,
+    insert node attribute {"analysis"} {
+      switch ($õlla/text())
+      case ("õõn") return "Pers Prs Ind Sg1 Aff"
+      case ("õõt") return "Pers Prs Ind Sg2 Aff"
+      case ("on") return "Pers Prs Ind Sg3 Aff"
+      case ("õõmmõ") return "Pers Prs Ind Pl1 Aff"
+      case ("õõttõ") return "Pers Prs Ind Pl2 Aff"
+      case ("õlla") return "Pers Prs Ind Pl3 Aff"
+      default return () (: @todo: throw exception :)
+    } into $õlla
+  )
 
 
 
-(: Export to Korp with Giellatekno tags :)
+(: Export to Korp with Giellatekno tags :) (:
 declare function local:export-to-giellatekno-vrt($nodes as node()*)
 {
   for $node in $nodes
@@ -111,8 +121,9 @@ declare function local:export-to-giellatekno-vrt($nodes as node()*)
     default return
       ()
 };
-
+:)
+(:
 declare option output:method "xml";
 declare option output:indent "no";
 declare option output:omit-xml-declaration "yes";
-local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus)
+local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus) :)
