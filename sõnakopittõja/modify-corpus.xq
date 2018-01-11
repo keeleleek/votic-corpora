@@ -29,6 +29,17 @@ for $text in db:open("sonakopittoja")//text()
 
 
 
+(: Insert date information :) (:
+for $text in db:open('sonakopittoja')//text
+  return (
+    insert node attribute {"datefrom"} {"20150101"} into $text,
+    insert node attribute {"dateto"} {"20151231"} into $text,
+    insert node attribute {"timefrom"} {"000000"} into $text,
+    insert node attribute {"timeto"} {"235959"} into $text
+  )
+:)
+
+
 (: Tokenize sentence elements (e.g populate <s> with <w>) :) (:
 for $s in db:open('sonakopittoja')//*[exists(./text())]
   return
@@ -63,8 +74,20 @@ for $neg in db:open('sonakopittoja')//w[
               matches(., "^(" || string-join(
                 ("en","ed","eb","emme","eväd","ette"), "|") || ")$")
             ]
-  return
-    insert node attribute {"lemma"} {"neg"} into $neg
+  return (
+    insert node attribute {"pos"} {"V"} into $neg,
+    insert node attribute {"lemma"} {"eb"} into $neg,
+    insert node attribute {"analysis"} {
+      switch ($neg/text())
+      case ("en") return "Pers Prs Ind Sg1 Neg"
+      case ("ed") return "Pers Prs Ind Sg2 Neg"
+      case ("eb") return "Pers Prs Ind Sg3 Neg"
+      case ("emme") return "Pers Prs Ind Pl1 Neg"
+      case ("ette") return "Pers Prs Ind Pl2 Neg"
+      case ("eväd") return "Pers Prs Ind Pl3 Neg"
+      default return ()
+    } into $neg
+  )
 :)
 
 
@@ -72,9 +95,63 @@ for $neg in db:open('sonakopittoja')//w[
 (: Lemmatize õlla tokens :) (:
 for $õlla in db:open('sonakopittoja')//w[
               matches(., "^(" || string-join(
-                ("õõn","õõt","on","õõmmõ","õõttõ","õlla",
-                 "õlko","õõtko"), "|") || ")$")
+                ("õõn","õõt","on","õõmmõ","õõttõ","õlla"), "|") || ")$")
             ]
-  return
-    insert node attribute {"lemma"} {"õlla"} into $õlla
+  return (
+    insert node attribute {"pos"} {"V"} into $õlla,
+    insert node attribute {"lemma"} {"õlla"} into $õlla,
+    insert node attribute {"analysis"} {
+      switch ($õlla/text())
+      case ("õõn") return "Pers Prs Ind Sg1 Aff"
+      case ("õõt") return "Pers Prs Ind Sg2 Aff"
+      case ("on") return "Pers Prs Ind Sg3 Aff"
+      case ("õõmmõ") return "Pers Prs Ind Pl1 Aff"
+      case ("õõttõ") return "Pers Prs Ind Pl2 Aff"
+      case ("õlla") return "Pers Prs Ind Pl3 Aff"
+      default return ()
+    } into $õlla
+  )
 :)
+
+
+
+(: Export to Korp with Giellatekno tags
+   recursive typeswitch pattern from https://en.m.wikibooks.org/wiki/XQuery/Typeswitch_Transformations
+:) 
+declare function local:export-to-giellatekno-vrt($nodes as node()*)
+{
+  for $node in $nodes
+  return
+    typeswitch ($node)
+    
+    case (element(w)) return
+      concat(
+        (: 1) token :)
+        $node/text(),
+        (: 2) lemma+morphemes :)
+        if (exists($node/@lemma)) then (out:tab() || $node/@lemma) else (),
+        if (exists($node/@pos)) then (" //_" || $node/@pos || "_ ") else (),
+        if (exists($node/@analysis)) then ($node/@analysis || ", //") else (),
+        out:nl()
+      )
+      
+    case (element(*)) return
+      (
+        element {name($node)} {(
+          $node/@*, (: pass through all attributes :)
+          out:nl(), (: add a newline :)
+          for $child in $node/node()
+            return local:export-to-giellatekno-vrt($child)
+        )},
+      out:nl()
+    )
+    
+    default return
+      ()
+};
+
+
+declare option output:method "xml";
+declare option output:indent "no";
+declare option output:omit-xml-declaration "yes";
+local:export-to-giellatekno-vrt(db:open('sonakopittoja')/corpus) 
