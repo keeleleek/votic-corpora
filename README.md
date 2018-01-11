@@ -9,4 +9,4 @@ The Votic corpora can be [searched and queried here](https://korp.keeleressursid
 
 Both of the corpuses are licensed with CC BY SA 4.0 and formatted with the Giellatekno flavour of Korp's corpus annotation used in the corpus search system at the [Center of Estonian Language Resources](https://keeleressursid.ee/en/).
 
-See [http://vadda.keeleleek.ee/] for more Votic resources.
+See http://vadda.keeleleek.ee/ for more Votic resources.
