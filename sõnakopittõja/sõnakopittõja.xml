@@ -1,5 +1,5 @@
 <corpus title="Vad̕d̕a sõnakopittõja">
-<text title="Alkusõnad">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="Alkusõnad">
 <p>
 <s>
  Vad̕d̕a
@@ -226,7 +226,7 @@
 </s>
 </p>
 </text>
-<text title="1. Vad̕d̕a tšeele bukvõd">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="1. Vad̕d̕a tšeele bukvõd">
 <p>
 <s>
  Müühep
@@ -613,7 +613,7 @@
 </s>
 </p>
 </text>
-<text title="2. Siivollizõd sõnad">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="2. Siivollizõd sõnad">
 <p>
 <s>
  Miä
@@ -740,7 +740,7 @@
 </s>
 </p>
 </text>
-<text title="3. Kuud, nätelipäived, nuumõrid">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="3. Kuud, nätelipäived, nuumõrid">
 <p>
 <s>
  Janvari
@@ -1444,7 +1444,7 @@
 </s>
 </p>
 </text>
-<text title="4. Inimin">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="4. Inimin">
 <p>
 <s>
  Inimin
@@ -1963,7 +1963,7 @@
 </s>
 </p>
 </text>
-<text title="5. Sõvad">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="5. Sõvad">
 <p>
 <s>
  Meille
@@ -2080,7 +2080,7 @@
 </s>
 </p>
 </text>
-<text title="6. Mikä, tšen, kase, see">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="6. Mikä, tšen, kase, see">
 <p>
 <s>
  See
@@ -2365,7 +2365,7 @@
 </s>
 </p>
 </text>
-<text title="7. Mar̕o">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="7. Mar̕o">
 <p>
 <s>
  Miä
@@ -2601,7 +2601,7 @@
 </s>
 </p>
 </text>
-<text title="8. Etsimme i levvämme">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="8. Etsimme i levvämme">
 <p>
 <s>
  Eezep
@@ -2759,7 +2759,7 @@
 </s>
 </p>
 </text>
-<text title="9. Mar̕o maam, taatt i velje">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="9. Mar̕o maam, taatt i velje">
 <p>
 <s>
  Millõ
@@ -3028,7 +3028,7 @@
 </s>
 </p>
 </text>
-<text title="10. Mar̕o ämme i äjje">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="10. Mar̕o ämme i äjje">
 <p>
 <s>
  Ämmelle
@@ -3204,7 +3204,7 @@
 </s>
 </p>
 </text>
-<text title="11. Mar̕o sukulaizõd">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="11. Mar̕o sukulaizõd">
 <p>
 <s>
  Meille
@@ -3304,7 +3304,7 @@
 </s>
 </p>
 </text>
-<text title="12. Süüttši">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="12. Süüttši">
 <p>
 <s>
  Süvvä
@@ -3620,7 +3620,7 @@
 </s>
 </p>
 </text>
-<text title="13. Ämmä retseptat">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="13. Ämmä retseptat">
 <p>
 <s>
  Kasõ
@@ -3897,7 +3897,7 @@
 </s>
 </p>
 </text>
-<text title="Mitä tehhä koton?">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="Mitä tehhä koton?">
 <p>
 <s>
  Mitä
@@ -3970,7 +3970,7 @@
 </s>
 </p>
 </text>
-<text title="14. Meije tšülä">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="14. Meije tšülä">
 <p>
 <s>
  Meije
@@ -4276,7 +4276,7 @@
 </s>
 </p>
 </text>
-<text>
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959">
 <p>
 <s>
  Žiivatad
@@ -4399,7 +4399,7 @@
 </s>
 </p>
 </text>
-<text title="15. Ilka sorzapuippu">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="15. Ilka sorzapuippu">
 <p>
 <s>
  Ämmelle
@@ -4574,7 +4574,7 @@
 </s>
 </p>
 </text>
-<text title="16. Kuhõ? Kuza? Kussa? Kõns? Kui? Missi?">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="16. Kuhõ? Kuza? Kussa? Kõns? Kui? Missi?">
 <p>
 <s>
  Litši
@@ -4918,7 +4918,7 @@
 </s>
 </p>
 </text>
-<text title="17. Kui mennä?">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="17. Kui mennä?">
 <p>
 <s>
  Kui
@@ -5064,7 +5064,7 @@
 </s>
 </p>
 </text>
-<text title="18. Koto, rihi">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="18. Koto, rihi">
 <p>
 <s>
  Linnõz
@@ -5637,7 +5637,7 @@
 </s>
 </p>
 </text>
-<text title="19. Saunõ">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="19. Saunõ">
 <p>
 <s>
  Sauna
@@ -5841,7 +5841,7 @@
 </s>
 </p>
 </text>
-<text title="20. Saaduz i taraz">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="20. Saaduz i taraz">
 <p>
 <s>
  Ämmelle
@@ -6011,7 +6011,7 @@
 </s>
 </p>
 </text>
-<text title="21. Nagrizkaaskõ">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="21. Nagrizkaaskõ">
 <p>
 <s>
  Äjjelle
@@ -6069,7 +6069,7 @@
 </s>
 </p>
 </text>
-<text title="22. Mettsez">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="22. Mettsez">
 <p>
 <s>
  Mettsez
@@ -6245,7 +6245,7 @@
 </s>
 </p>
 </text>
-<text title="23. Zveerid">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="23. Zveerid">
 <p>
 <s>
  Miä
@@ -6569,7 +6569,7 @@
 </s>
 </p>
 </text>
-<text title="24. Kaunizhatukkõin">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="24. Kaunizhatukkõin">
 <p>
 <s>
  Eletti
@@ -7235,7 +7235,7 @@
 </s>
 </p>
 </text>
-<text title="25. Päived maallõ">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="25. Päived maallõ">
 <p>
 <s>
  Tänäve
@@ -7950,7 +7950,7 @@
 </s>
 </p>
 </text>
-<text title="26. Tšello i aikõ">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="26. Tšello i aikõ">
 <p>
 <s>
  Mõntõ
@@ -8097,7 +8097,7 @@
 </s>
 </p>
 </text>
-<text title="27. Ivo püvveb kalla">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="27. Ivo püvveb kalla">
 <p>
 <s>
  Kala
@@ -8316,7 +8316,7 @@
 </s>
 </p>
 </text>
-<text title="28. Lugõmmõ vad̕d̕assi, saadko arvoa?">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="28. Lugõmmõ vad̕d̕assi, saadko arvoa?">
 <p>
 <s>
  Õppõmmõ
@@ -8463,7 +8463,7 @@
 </s>
 </p>
 </text>
-<text title="29. Voosi">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="29. Voosi">
 <p>
 <s>
  Talvi
@@ -9131,7 +9131,7 @@
 </s>
 </p>
 </text>
-<text title="30. Isä meije">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="30. Isä meije">
 <p>
 <s>
  Isä
@@ -9216,7 +9216,7 @@
 </s>
 </p>
 </text>
-<text title="31. Pühad">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="31. Pühad">
 <p>
 <s>
  Uusi
@@ -9638,7 +9638,7 @@
 </s>
 </p>
 </text>
-<text title="32. Pittše juttu">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="32. Pittše juttu">
 <p>
 <s>
  Kuza
@@ -9778,7 +9778,7 @@
 </s>
 </p>
 </text>
-<text title="33. Irvieinetšaaju">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="33. Irvieinetšaaju">
 <p>
 <s>
  Kui
@@ -9876,7 +9876,7 @@
 </s>
 </p>
 </text>
-<text title="34. Vad̕d̕alaisi tševädlaulu">
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959" title="34. Vad̕d̕alaisi tševädlaulu">
 <p>
 <s>
  Kuultagakka
@@ -10187,7 +10187,7 @@
 </s>
 </p>
 </text>
-<text>
+<text datefrom="20150101" dateto="20151231" timefrom="000000" timeto="235959">
 <p>
 <s>
  Liivtšülä
